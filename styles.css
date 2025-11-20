@@ -1,48 +1,98 @@
-/* styles.css - simplified, robust layout for the poster page */
 :root{
-  --bg:#07123b;
-  --card-bg: rgba(255,255,255,0.03);
-  --accent:#ff5b57;
-  --muted:#b9c8ff;
+  --bg:#07123b;            /* deep navy like poster background */
+  --accent:#ff5048;        /* bright coral red */
+  --accent-dark:#e8433f;
+  --muted:#9fb6e6;
+  --panel: rgba(255,255,255,0.03);
   --glass: rgba(255,255,255,0.04);
+  --card-shadow: 0 10px 30px rgba(2,8,30,0.6);
+  --white:#ffffff;
+  --dark-text:#06102a;
 }
 
 *{box-sizing:border-box}
-html,body{height:100%;margin:0;font-family:Roboto, system-ui, -apple-system, "Segoe UI", Arial;background:var(--bg);color:#fff}
-.container{max-width:1100px;margin:24px auto;padding:16px}
-.header{text-align:center;margin-bottom:12px}
-.header h1{font-family:Montserrat, sans-serif;color:var(--accent);margin:6px 0;font-size:28px;letter-spacing:1px}
-.header .lead{color:var(--muted);margin:0;font-size:14px}
+html,body{height:100%;margin:0;font-family:Roboto, system-ui, -apple-system,"Segoe UI",Arial;background:var(--bg);color:var(--white)}
+.wrap{max-width:1100px;margin:24px auto;padding:16px}
 
-/* Poster */
-.poster{display:flex;justify-content:center;margin:10px 0}
-.poster-img{width:100%;max-width:920px;height:auto;border-radius:10px;box-shadow:0 20px 40px rgba(0,0,0,0.6);display:block}
+/* HERO / top of poster look */
+.hero{position:relative;border-radius:12px;overflow:hidden;padding:28px;background:
+  radial-gradient( circle at 10% 10%, rgba(255,80,72,0.06), transparent 8%),
+  linear-gradient(180deg, rgba(7,18,59,0.95) 0%, rgba(6,12,38,0.95) 100%);
+box-shadow:var(--card-shadow)}
+.corner-accent{position:absolute;left:-60px;top:-60px;width:0px;height:220px;background:linear-gradient(135deg,#ff8a62,#ff4b4b);border-radius:46% 20% 20% 46%}
+.hero-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
+.brand-left{display:flex;align-items:flex-start;gap:14px}
+.brand-triangle{width:0;height:0;border-left:34px solid transparent;border-right:20px solid transparent;border-bottom:46px solid var(--accent);transform:rotate(-20deg);margin-top:8px}
+.main-title{font-family:Montserrat, sans-serif;font-weight:800;color:var(--accent);font-size:44px;line-height:0.95;margin:0;letter-spacing:1px;text-transform:uppercase}
+.main-title .sec{color:var(--white);font-size:44px}
+.badge{background:rgba(255,255,255,0.04);padding:10px 14px;border-radius:40px;border:2px solid rgba(255,255,255,0.03);color:var(--muted);display:flex;align-items:center;justify-content:center}
+.badge-inner{font-size:12px;line-height:1.1;text-align:center}
 
-/* Details */
-.details{margin-top:16px;background:var(--card-bg);padding:14px;border-radius:10px}
-.details h2{margin:0 0 10px 0;color:var(--muted);font-size:16px}
-.grid{display:grid;grid-template-columns:1fr;gap:12px}
-.card{background:var(--glass);padding:12px;border-radius:8px}
-.card h3{margin:0 0 8px 0;color:var(--muted);font-size:14px}
-.card ul{margin:0;padding-left:1.15rem;font-size:14px;line-height:1.5}
-.two-cols{display:flex;gap:12px}
-.two-cols ul{margin:0;padding-left:1rem}
+/* Logo image in badge */
+.badge-img{max-width:120px;height:auto;display:block}
 
-/* Register & download */
-.register-row{display:flex;justify-content:space-between;align-items:center;margin-top:12px;gap:12px;flex-wrap:wrap}
-.register-link{display:inline-block;background:#fff;color:#07123b;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:700}
-.download{background:var(--accent);color:#fff;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:700}
+/* Delivered ribbon */
+.delivered{display:flex;justify-content:center;margin-top:18px}
+.ribbon{background:var(--accent);color:var(--dark-text);font-weight:700;padding:10px 18px;border-radius:10px;display:inline-block;box-shadow:0 8px 18px rgba(232,67,63,0.18)}
+.ribbon .small{display:block;font-weight:500;font-size:14px}
 
-/* Contact */
-.contact{display:flex;gap:18px;margin-top:14px;flex-wrap:wrap}
-.contact span{background:rgba(255,255,255,0.03);padding:8px 10px;border-radius:8px;font-size:14px;color:var(--muted)}
+/* CONTENT */
+.content{margin-top:18px;padding:18px;background:linear-gradient(180deg, rgba(255,255,255,0.012), rgba(255,255,255,0.008));border-radius:10px}
+.location .label{color:var(--muted);font-weight:700;margin:0}
+.location h2{color:var(--accent);margin:6px 0 14px 0;font-family:Montserrat, sans-serif}
 
-/* Responsive */
-@media(min-width:900px){
-  .grid{grid-template-columns:repeat(3,1fr)}
-  .header h1{font-size:36px}
+/* two-column area: learn + floating note */
+.two-col{display:flex;gap:18px;align-items:flex-start}
+.what{flex:1;background:var(--panel);padding:14px;border-radius:10px}
+.what h3{margin:0 0 8px 0;color:var(--muted);text-transform:uppercase;font-size:14px}
+.what ul{margin:0;padding-left:1.1rem;font-size:14px;line-height:1.5}
+.notice{width:220px;flex:0 0 220px}
+.float-note{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:16px;border-radius:10px;border:1px dashed rgba(255,255,255,0.03);text-align:center;color:var(--muted)}
+.float-note p{margin:6px 0;font-weight:700}
+
+/* Certifications grid */
+.certs{margin-top:18px}
+.certs-title{color:var(--muted);font-size:14px;margin:0 0 10px 0;font-weight:700}
+.cert-grid{display:flex;gap:18px}
+.cert-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:14px;border-radius:8px;flex:1;text-align:center}
+.cert-card ul{list-style:none;margin:0;padding:0;font-weight:700;color:var(--dark-text)}
+.cert-card.left{background:#ffb1ae}
+.cert-card.right{background:#ffb1ae}
+
+/* Quick facts row - circular elements */
+.quick-facts{display:flex;gap:18px;margin-top:20px;flex-wrap:wrap}
+.fact{min-width:160px;background:linear-gradient(180deg,#ff6b62,#ff6b62);color:var(--dark-text);font-weight:800;padding:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;box-shadow:0 12px 24px rgba(0,0,0,0.45)}
+.fact span{display:block;font-weight:700;margin-top:8px}
+
+/* Register row */
+.register{display:flex;justify-content:space-between;align-items:center;margin-top:18px;gap:12px;flex-wrap:wrap}
+.reg-left{display:flex;flex-direction:column;gap:6px}
+.reg-label{color:var(--muted);margin:0}
+.reg-link{background:#fff;color:#07123b;padding:10px 12px;border-radius:8px;font-weight:800;text-decoration:none;display:inline-block}
+.download-btn{background:transparent;border:2px solid var(--muted);color:var(--muted);padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700}
+
+/* QR and reg-right layout */
+.reg-right{display:flex;flex-direction:column;align-items:center;gap:10px}
+.qr{margin-top:6px;display:flex;align-items:center;justify-content:center}
+.qr-img{width:120px;height:auto;background:#fff;padding:8px;border-radius:8px;display:block;box-shadow:0 8px 18px rgba(0,0,0,0.25)}
+
+/* Contacts */
+.contacts{display:flex;gap:12px;margin-top:-10px;flex-wrap:wrap}
+.contact-item{background:rgba(255,255,255,0.02);padding:10px 12px;border-radius:8px;color:var(--muted);font-weight:700}
+
+/* Responsiveness */
+@media (max-width:980px){
+  .main-title,.main-title .sec{font-size:34px}
+  .two-col{flex-direction:column}
+  .notice{width:100%}
+  .cert-grid{flex-direction:column}
+  .fact{min-width:120px;padding:14px}
+  .qr-img{width:100px}
 }
-@media(max-width:540px){
-  .header h1{font-size:20px}
-  .poster-img{max-width:100%}
+@media (max-width:520px){
+  .main-title,.main-title .sec{font-size:26px}
+  .ribbon{padding:8px 12px;font-size:14px}
+  .cert-card.left,.cert-card.right{padding:10px}
+  .reg-link{padding:8px 10px}
+  .qr-img{width:92px}
 }
