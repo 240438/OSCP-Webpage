@@ -10,14 +10,14 @@
 <body>
   <main class="wrap">
     <header class="hero">
-      <div class="corner-accent"></div>
+      <div class="corner-accent" aria-hidden="true"></div>
       <div class="hero-inner">
         <div class="brand-left">
-          <!-- decorative triangle removed to keep title clear -->
+          <!-- decorative triangle kept subtle for balance -->
           <h1 class="main-title">OFFENSIVE<br><span class="sec">SECURITY</span><br>WORKSHOP</h1>
         </div>
         <div class="badge" aria-hidden="false">
-          <!-- Replaced the text badge with the requested logo image -->
+          <!-- Logo image in badge -->
           <img src="COMSATS_new_logo-rm.png" alt="COMSATS University logo" class="badge-img">
         </div>
       </div>
@@ -56,26 +56,38 @@
 
       <section class="certs">
         <h3 class="certs-title">Applicants can apply for the following certifications after completing workshop</h3>
-        <div class="cert-grid">
-          <div class="cert-card left">
-            <ul>
-              <li>CEH (EC-COUNCIL)</li>
-              <li>PENTEST+ (COMPTIA)</li>
-              <li>PNPT (TCM SECURITY)</li>
-            </ul>
-          </div>
-          <div class="cert-card right">
-            <ul>
-              <li>OSCP+ (OFFSEC)</li>
-              <li>PT 1 (TRY HACK ME)</li>
-              <li>CPTS (HACK THE BOX)</li>
-            </ul>
+
+        <div class="cert-grid" aria-hidden="false">
+          <div class="cert-logos">
+            <figure class="cert-item" role="group" aria-label="CEH">
+              <img src="images/CEH.png" alt="CEH (EC-Council) logo" class="cert-logo">
+            </figure>
+
+            <figure class="cert-item" role="group" aria-label="Pentest+">
+              <img src="images/Pentest+.png" alt="Pentest+ (CompTIA) logo" class="cert-logo">
+            </figure>
+
+            <figure class="cert-item" role="group" aria-label="PNPT">
+              <img src="images/PNPT.png" alt="PNPT (TCM Security) logo" class="cert-logo">
+            </figure>
+
+            <figure class="cert-item" role="group" aria-label="OSCP+">
+              <img src="images/OSCP+.png" alt="OSCP+ (OffSec) logo" class="cert-logo">
+            </figure>
+
+            <figure class="cert-item" role="group" aria-label="PT1">
+              <img src="images/PT1.png" alt="PT1 (TryHackMe) logo" class="cert-logo">
+            </figure>
+
+            <figure class="cert-item" role="group" aria-label="CPTS">
+              <img src="images/CPTS.png" alt="CPTS (HackTheBox) logo" class="cert-logo">
+            </figure>
           </div>
         </div>
       </section>
 
       <section class="quick-facts">
-        <div class="fact">FEE:<span>125,000 PKR / PERSON</span></div>
+        <div class="fact">FEE:125,000 PKR / PERSON</div>
         <div class="fact">10 Days</div>
         <div class="fact">09:30 AM to 04:30 PM</div>
         <div class="fact">Starting in January 2026</div>
@@ -88,10 +100,8 @@
         </div>
 
         <div class="reg-right">
-          <!-- The poster download link is intentionally preserved as requested -->
           <a class="download-btn" href="image1.jpg" download="workshop-poster.jpg">Download Poster JPG</a>
 
-          <!-- QR code added below the download button -->
           <div class="qr" aria-label="QR code for registration">
             <img src="OSCP_JPEG.jpg" alt="OSCP registration QR code" class="qr-img">
           </div>
