@@ -80,7 +80,7 @@ html,body{height:100%;margin:0;font-family:Roboto, system-ui, -apple-system,"Seg
 .badge-img{max-width:140px;height:auto;display:block}
 
 /* Delivered ribbon (more vertical spacing) */
-.delivered{display:flex;justify-content:center;margin-top:var(--space-md);margin-bottom:var(--space-lg)}
+.delivered{display:flex;justify-content:center;margin-top:var(--space-md);}
 .ribbon{
   background:linear-gradient(180deg,var(--accent-2),var(--accent));
   color:var(--white);font-weight:700;padding:12px 20px;border-radius:12px;display:inline-block;
