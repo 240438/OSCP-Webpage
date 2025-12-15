@@ -25,7 +25,7 @@
   --space-xl: 72px;
 
   /* responsive fact size */
-  --fact-size: clamp(120px, 18vw, 200px);
+  --fact-size: clamp(150px, 20vw, 240px);
 
   /* float-note offset variable (used by transform). Adjust clamp values if needed. */
   --float-offset: clamp(0px, 8vw, 140px);
@@ -50,11 +50,12 @@ img{max-width:100%;height:auto;display:block}
   min-height:220px;
   background:
     radial-gradient(circle at 12% 14%, rgba(39, 111, 80, 0.06), transparent 1%),
-     linear-gradient(180deg, rgba(6, 132, 253, 0.56) 0%, rgba(250,252,250,0.98) 100%);
+     linear-gradient(180deg, rgba(231, 238, 244, 0.56) 0%, rgba(250,252,250,0.98) 100%);
   box-shadow:var(--card-shadow);
   border:1px solid var(--border);
   margin-bottom:var(--space-xl);
 }
+
 .corner-accent{
   position:absolute;
   left:-40px;
@@ -78,6 +79,8 @@ img{max-width:100%;height:auto;display:block}
   margin:0;
   letter-spacing:1px;
   text-transform:uppercase;
+  flex: 2;                        /* give more space to title */
+  text-align: center;
 }
 .main-title .sec{color:var(--text);font-size:inherit}
 .badge{
