@@ -68,8 +68,25 @@ img{max-width:100%;height:auto;display:block}
   opacity:0.12;
 }
 /* Allow content to wrap on small screens */
-.hero-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:var(--space-lg);flex-wrap:wrap}
-.brand-left{display:flex;align-items:flex-start;gap:18px;flex:1;min-width:0}
+/* FIXED: Hero inner container */
+.hero-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:clamp(20px, 5vw, 48px);
+  flex-wrap:wrap;
+}
+
+/* FIXED: Brand left section with logo and title */
+.brand-left{
+  display:flex;
+  align-items:center;
+  gap:clamp(16px, 3vw, 24px);
+  flex:  1 1 auto;
+  min-width:0;
+  justify-content:flex-start;
+}
+
 .main-title{
   font-family:Montserrat, sans-serif;
   font-weight:900;
